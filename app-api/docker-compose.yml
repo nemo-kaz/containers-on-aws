@@ -2,18 +2,18 @@ version: "2"
 
 services:
   api:
-    image: AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/demo/api:latest
-    ports:
-      - 80:80
-    container_name: api
-  # gre:
-  #   image: inference
-  #   ports:
-  #     - 80:8000
-  #   volumes:
-  #     - /var/lib/nvidia-docker/volumes/nvidia_driver/352.99:/usr/local/nvidia:ro
-  #   devices:
-  #     - /dev/nvidiactl
-  #     - /dev/nvidia-uvm
-  #     - /dev/nvidia0
-  #   container_name: gre
+   # image: AWS_ACCOUNT_ID.dkr.ecr.AWS_REGION.amazonaws.com/demo/api:latest
+  #  ports:
+  #    - 80:80
+  #  container_name: api
+   gre:
+     image: inference
+     ports:
+       - 80:8000
+     volumes:
+       - /var/lib/nvidia-docker/volumes/nvidia_driver/352.99:/usr/local/nvidia:ro
+     devices:
+       - /dev/nvidiactl
+       - /dev/nvidia-uvm
+       - /dev/nvidia0
+     container_name: gre
